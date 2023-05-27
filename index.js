@@ -6,7 +6,7 @@ const path = require("node:path");
 const { Client, GatewayIntentBits, Collection } = require("discord.js");
 const { token } = require("./config.json");
 
-let connexions = require('./database/connexions.json');
+
 
 const colors = require("colors");
 colors.enable();
@@ -47,17 +47,9 @@ for (const file of eventFiles) {
   }
 }
 
-client.on('message', async message => {
-    if (message.author.bot) return;
-
-    if (!connexions[message.author.id]) {
-        connexions[message.author.id] = {
-            connexions: 0
-        };
-    }
 
     
-});
+
 
 
 
